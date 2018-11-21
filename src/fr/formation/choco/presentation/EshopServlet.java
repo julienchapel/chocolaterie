@@ -17,6 +17,12 @@ public class EshopServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		// Le RequestDispatcher et le seul objet permettant d'utiliser une page
+		// JSP : Compiler et éxécuter le code Java puis transformer le tout en
+		// HTML/CSS.
+		// C'est toujours le contexte de la servlet (ServletContext)
+		// qui permet de constuire un objet RequestDispatcher pour une JSP
+		// donnée (ici /eshop.jsp).
 		this.getServletContext().getRequestDispatcher("/eshop.jsp").forward(req,
 				resp);
 	}
