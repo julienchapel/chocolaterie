@@ -16,4 +16,14 @@
 		<servlet-name>OriginsServlet</servlet-name>
 		<url-pattern>/origins.html</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ChocolatesServlet</servlet-name>
+		<servlet-class>fr.formation.choco.presentation.ChocolatesServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ChocolatesServlet</servlet-name>
+		<url-pattern>/chocolates.html</url-pattern>
+	</servlet-mapping>
 </web-app>
