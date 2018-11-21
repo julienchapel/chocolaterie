@@ -26,4 +26,14 @@
 		<servlet-name>ChocolatesServlet</servlet-name>
 		<url-pattern>/chocolates.html</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EshopServlet</servlet-name>
+		<servlet-class>fr.formation.choco.presentation.EshopServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EshopServlet</servlet-name>
+		<url-pattern>/eshop.html</url-pattern>
+	</servlet-mapping>
 </web-app>
