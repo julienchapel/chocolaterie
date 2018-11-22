@@ -7,7 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 public class EshopServlet extends HttpServlet {
+	
+	private static final Logger LOGGER = Logger.getLogger(EshopServlet.class);
 
 	/**
 	 * 
@@ -25,5 +29,21 @@ public class EshopServlet extends HttpServlet {
 		// donnée (ici /eshop.jsp).
 		this.getServletContext().getRequestDispatcher("/eshop.jsp").forward(req,
 				resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String name = req.getParameter("name");
+		String address = req.getParameter("address");
+		String choco = req.getParameter("choco");
+		String message = String.format(
+				"Un colis au nom de %s, à l'adresse %s avec du chocolat %s",
+				name, address, choco);
+		EshopServlet.LOGGER.info(message);
+		// Passer une information de la Servlet à la JSP.
+		req.setAttribute("message", message);
+		// Rappel de doGet pour déclencher le forward vers la JSP.
+		this.doGet(req, resp);
 	}
 }
