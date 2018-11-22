@@ -37,8 +37,13 @@ public class EshopServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String address = req.getParameter("address");
 		String choco = req.getParameter("choco");
-		EshopServlet.LOGGER.info(String.format(
+		String message = String.format(
 				"Un colis au nom de %s, à l'adresse %s avec du chocolat %s",
-				name, address, choco));
+				name, address, choco);
+		EshopServlet.LOGGER.info(message);
+		// Passer une information de la Servlet à la JSP.
+		req.setAttribute("message", message);
+		// Rappel de doGet pour déclencher le forward vers la JSP.
+		this.doGet(req, resp);
 	}
 }

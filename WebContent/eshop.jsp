@@ -54,6 +54,10 @@
 			</select>
 		</div>
 		<button>Commander</button>
-	</form>	
+	</form>
+	
+	<div>
+		Résultat du doPost : ${message}
+	</div>
 </body>
 </html>
