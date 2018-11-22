@@ -32,5 +32,28 @@
 		<!-- Le symbole ci-dessus correspond à déclarer la fin du bloc de code Java,
 			on est de nouveau en HTML -->
 	</div>
+	
+	<h2>Choisissez vos chocolats :</h2>
+	<form method="post" action="">
+		<div>
+			<label for="name">Nom</label>
+			<input id="name" name="name">
+		</div>
+		<div>
+			<label for="address">Adresse</label>
+			<input id="address" name="address">
+		</div>
+		<div>
+			<label for="choco">Type de chocolats</label>
+			<select id="choco" name="choco">
+				<option label="Noir 70%" value="black-70" />
+				<option label="Noir 88%" value="black-88" />
+				<option label="Noir 90%" value="black-90" />
+				<option label="Blanc" value="white" />
+				<option label="Lait" value="milk" />
+			</select>
+		</div>
+		<button>Commander</button>
+	</form>	
 </body>
 </html>
